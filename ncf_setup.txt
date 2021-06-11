@@ -1,0 +1,464 @@
+https://www.techiediaries.com/angular-bootstrap/
+
+cd /data/CODE/ELIPS
+sudo npm install -g @angular/cli
+ng new ncf
+cd ncf
+
+npm install primeng primeicons --save
+npm install @angular/cdk --save
+
+#npm install @ng-bootstrap/ng-bootstrap
+#npm install angular-datatables --save
+#npm install primeng --save
+#npm i --save bootstrap @ng-bootstrap/ng-bootstrap angular-9-datatable font-awesome
+
+sudo npm install -g n
+ng update
+
+# Add this to tsconfig.json
+
+    "baseUrl": "./src",
+    "paths": {
+      "shared/*": [
+        "app/shared/*"
+      ]
+    },
+
+
+ng g m shared
+
+ng g s shared/services/nson
+ng g s shared/services/auth-guard
+ng g s shared/services/auth
+ng g s shared/services/user
+ng g s shared/services/domain
+ng g s shared/services/translate
+ng g s shared/services/scenario
+
+
+# Copy lines from CASE.xlsx NGCMD sheet columns C and D
+
+ng g m finance
+ng g m personnel
+ng g m material
+ng g m request
+ng g m sales
+ng g m purchase
+ng g m production
+ng g m maintenance
+ng g m shipment
+ng g m commerce
+ng g m motifArge
+ng g m project
+ng g m helpdesk
+ng g m business
+ng g m settings
+
+ng g c business/business-services
+ng g c business/partner-certification-types
+ng g c business/business-partners
+ng g c business/business-owners
+ng g c business/vendors
+ng g c business/customers
+ng g c business/my-company
+ng g c business/business-reports
+ng g c finance/tax-types
+ng g c finance/account-masters
+ng g c finance/account-schemas
+ng g c finance/account-transaction-templates
+ng g c finance/banks
+ng g c finance/bank-accounts
+ng g c helpdesk/support-areas
+ng g c helpdesk/support-groups
+ng g c helpdesk/support-tickets
+ng g c helpdesk/ticket-reports
+ng g c maintenance/equipment
+ng g c maintenance/service-types
+ng g c maintenance/mx-counter-types
+ng g c maintenance/maintenances
+ng g c material/manufacturers
+ng g c material/material-types
+ng g c material/material-attribute-groups
+ng g c material/material-groups
+ng g c material/materials
+ng g c personnel/qualifications
+ng g c personnel/position-types
+ng g c personnel/organizations
+ng g c personnel/people
+ng g c personnel/employees
+ng g c production/production-resources
+ng g c production/bom-operations
+ng g c production/production-orders
+ng g c project/categories
+ng g c project/projects
+ng g c project/subcontractors
+ng g c project/project-manhours
+ng g c project/project-quantities
+ng g c project/approve-progress
+ng g c project/approve-manhour
+ng g c project/approve-quantity
+ng g c project/project-reports
+ng g c purchase/request-for-proposal-entry
+ng g c purchase/request-for-proposals-initial
+ng g c purchase/request-for-proposals-published
+ng g c purchase/request-for-proposals-complete
+ng g c purchase/purchase-orders
+ng g c purchase/purchase-deliveries
+ng g c purchase/purchase-order-deliver
+ng g c request/material-request-entry
+ng g c request/material-request-by-define
+ng g c request/material-requests
+ng g c request/material-request-reports
+ng g c sales/product-prices
+ng g c sales/sales-campaigns
+ng g c sales/product-price-commitment-fast
+ng g c sales/product-price-commitments
+ng g c sales/sales-cart
+ng g c sales/sales-orders
+ng g c sales/my-sales-orders
+ng g c sales/sales-reports
+ng g c sales/sales-owner-reports
+ng g c sales/sales-vendor-reports
+ng g c sales/sales-customer-reports
+ng g c settings/authority-groups
+ng g c settings/menus
+ng g c settings/user-accounts
+ng g c settings/domains
+ng g c settings/languages
+ng g c settings/unit-conversions
+ng g c settings/content-servers
+ng g c settings/content-upload
+ng g c settings/notification-types
+ng g c settings/table-controller-statics
+ng g c settings/table-view-scenarios
+ng g c shipment/shipments
+ng g c shipment/shipment-reports
+
+ng g c business/business-service-form
+ng g c business/partner-certification-type-form
+ng g c business/business-partner-form
+ng g c business/business-owner-form
+ng g c business/vendor-form
+ng g c business/customer-form
+ng g c business/my-company-form
+ng g c business/business-report-form
+ng g c finance/tax-type-form
+ng g c finance/account-master-form
+ng g c finance/account-schema-form
+ng g c finance/account-transaction-template-form
+ng g c finance/bank-form
+ng g c finance/bank-account-form
+ng g c helpdesk/support-area-form
+ng g c helpdesk/support-group-form
+ng g c helpdesk/support-ticket-form
+ng g c helpdesk/ticket-report-form
+ng g c maintenance/equipment-form
+ng g c maintenance/service-type-form
+ng g c maintenance/mx-counter-type-form
+ng g c maintenance/maintenance-form
+ng g c material/manufacturer-form
+ng g c material/material-type-form
+ng g c material/material-attribute-group-form
+ng g c material/material-group-form
+ng g c material/material-form
+ng g c personnel/qualification-form
+ng g c personnel/position-type-form
+ng g c personnel/organization-form
+ng g c personnel/person-form
+ng g c personnel/employee-form
+ng g c production/production-resource-form
+ng g c production/bom-operation-form
+ng g c production/production-order-form
+ng g c project/category-form
+ng g c project/project-form
+ng g c project/subcontractor-form
+ng g c project/project-manhour-form
+ng g c project/project-quantity-form
+ng g c project/approve-progress-form
+ng g c project/approve-manhour-form
+ng g c project/approve-quantity-form
+ng g c project/project-report-form
+ng g c purchase/request-for-proposal-entry-form
+ng g c purchase/request-for-proposal-initial-form
+ng g c purchase/request-for-proposal-published-form
+ng g c purchase/request-for-proposal-complete-form
+ng g c purchase/purchase-order-form
+ng g c purchase/purchase-delivery-form
+ng g c purchase/purchase-order-deliver-form
+ng g c request/material-request-entry-form
+ng g c request/material-request-by-define-form
+ng g c request/material-request-form
+ng g c request/material-request-report-form
+ng g c sales/product-price-form
+ng g c sales/sales-campaign-form
+ng g c sales/product-price-commitment-fast-form
+ng g c sales/product-price-commitment-form
+ng g c sales/sales-cart-form
+ng g c sales/sales-order-form
+ng g c sales/my-sales-order-form
+ng g c sales/sales-report-form
+ng g c sales/sales-owner-report-form
+ng g c sales/sales-vendor-report-form
+ng g c sales/sales-customer-report-form
+ng g c settings/authority-group-form
+ng g c settings/menu-form
+ng g c settings/user-account-form
+ng g c settings/domain-form
+ng g c settings/language-form
+ng g c settings/unit-conversion-form
+ng g c settings/content-server-form
+ng g c settings/content-upload-form
+ng g c settings/notification-type-form
+ng g c settings/table-controller-static-form
+ng g c settings/table-view-scenario-form
+ng g c shipment/shipment-form
+ng g c shipment/shipment-report-form
+
+
+# Modify Module imports, add below lines
+
+import { RouterModule } from '@angular/router';
+import { SharedModule } from 'src/app/shared/shared.module';
+import { AuthGuardService } from 'src/app/shared/services/auth-guard.service';
+
+# Import settings links to main page -> app-module.ts
+# Include all modules into app-module.ts including routing module
+
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { HttpModule } from '@angular/http';
+import { RouterModule } from '@angular/router';
+import { ReactiveFormsModule } from '@angular/forms';
+//import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
+import { MainModule } from './main/main.module';
+import { FinanceModule } from './finance/finance.module';
+import { PersonnelModule } from './personnel/personnel.module';
+import { MaterialModule } from './material/material.module';
+import { RequestModule } from './request/request.module';
+import { SalesModule } from './sales/sales.module';
+import { PurchaseModule } from './purchase/purchase.module';
+import { ProductionModule } from './production/production.module';
+import { MaintenanceModule } from './maintenance/maintenance.module';
+import { ShipmentModule } from './shipment/shipment.module';
+import { CommerceModule } from './commerce/commerce.module';
+import { ProjectModule } from './project/project.module';
+import { HelpdeskModule } from './helpdesk/helpdesk.module';
+import { BusinessModule } from './business/business.module';
+import { SettingsModule } from './settings/settings.module';
+import { SharedModule } from './shared/shared.module';
+
+import { HomeComponent } from './main/home/home.component';
+import { LoginComponent } from './main/login/login.component';
+import { AccountRegisterComponent } from './main/account-register/account-register.component';
+import { BsNavbarComponent } from './main/bs-navbar/bs-navbar.component';
+
+
+@NgModule({
+  declarations: [
+    AppComponent
+  ],
+  imports: [
+    BrowserModule,
+    MainModule,
+    FinanceModule,
+    PersonnelModule,
+    MaterialModule,
+    RequestModule,
+    SalesModule,
+    PurchaseModule,
+    ProductionModule,
+    MaintenanceModule,
+    ShipmentModule,
+    CommerceModule,
+    ProjectModule,
+    HelpdeskModule,
+    BusinessModule,
+    SettingsModule,
+    SharedModule,
+//    AppRoutingModule
+    HttpModule,
+    ReactiveFormsModule,
+    RouterModule.forRoot([
+      {path: 'main/home',                          component: HomeComponent},
+      {path: 'main/login',                         component: LoginComponent},
+      {path: 'main/bs-navbar',                     component: BsNavbarComponent},
+      {path: 'main/account-register',              component: AccountRegisterComponent},
+     ])
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }
+
+
+sed 's/__PLURAL__/business-services/g' /data/CODE/ELIPS/doc/template-s.component.ts  | sed 's/__COMPONENTS__/BusinessServices/g' | sed 's/__SCENARIO__/BUSINESS_SERVICE/g' > /data/CODE/ELIPS/ncf/src/app/business/business-services/business-services.component.ts
+sed 's/__PLURAL__/partner-certification-types/g' /data/CODE/ELIPS/doc/template-s.component.ts  | sed 's/__COMPONENTS__/PartnerCertificationTypes/g' | sed 's/__SCENARIO__/PARTNER_CERTIFICATION_TYPE/g' > /data/CODE/ELIPS/ncf/src/app/business/partner-certification-types/partner-certification-types.component.ts
+sed 's/__PLURAL__/business-partners/g' /data/CODE/ELIPS/doc/template-s.component.ts  | sed 's/__COMPONENTS__/BusinessPartners/g' | sed 's/__SCENARIO__/BUSINESS_PARTNER/g' > /data/CODE/ELIPS/ncf/src/app/business/business-partners/business-partners.component.ts
+sed 's/__PLURAL__/business-owners/g' /data/CODE/ELIPS/doc/template-s.component.ts  | sed 's/__COMPONENTS__/BusinessOwners/g' | sed 's/__SCENARIO__/BUSINESS_OWNER/g' > /data/CODE/ELIPS/ncf/src/app/business/business-owners/business-owners.component.ts
+sed 's/__PLURAL__/vendors/g' /data/CODE/ELIPS/doc/template-s.component.ts  | sed 's/__COMPONENTS__/Vendors/g' | sed 's/__SCENARIO__/VENDOR/g' > /data/CODE/ELIPS/ncf/src/app/business/vendors/vendors.component.ts
+sed 's/__PLURAL__/customers/g' /data/CODE/ELIPS/doc/template-s.component.ts  | sed 's/__COMPONENTS__/Customers/g' | sed 's/__SCENARIO__/CUSTOMER/g' > /data/CODE/ELIPS/ncf/src/app/business/customers/customers.component.ts
+sed 's/__PLURAL__/my-company/g' /data/CODE/ELIPS/doc/template-s.component.ts  | sed 's/__COMPONENTS__/MyCompany/g' | sed 's/__SCENARIO__/MY_COMPANY/g' > /data/CODE/ELIPS/ncf/src/app/business/my-company/my-company.component.ts
+sed 's/__PLURAL__/business-reports/g' /data/CODE/ELIPS/doc/template-s.component.ts  | sed 's/__COMPONENTS__/BusinessReports/g' | sed 's/__SCENARIO__/BUSINESS_REPORT/g' > /data/CODE/ELIPS/ncf/src/app/business/business-reports/business-reports.component.ts
+sed 's/__PLURAL__/tax-types/g' /data/CODE/ELIPS/doc/template-s.component.ts  | sed 's/__COMPONENTS__/TaxTypes/g' | sed 's/__SCENARIO__/TAX_TYPE/g' > /data/CODE/ELIPS/ncf/src/app/finance/tax-types/tax-types.component.ts
+sed 's/__PLURAL__/account-masters/g' /data/CODE/ELIPS/doc/template-s.component.ts  | sed 's/__COMPONENTS__/AccountMasters/g' | sed 's/__SCENARIO__/ACCOUNT_MASTER/g' > /data/CODE/ELIPS/ncf/src/app/finance/account-masters/account-masters.component.ts
+sed 's/__PLURAL__/account-schemas/g' /data/CODE/ELIPS/doc/template-s.component.ts  | sed 's/__COMPONENTS__/AccountSchemas/g' | sed 's/__SCENARIO__/ACCOUNT_SCHEMA/g' > /data/CODE/ELIPS/ncf/src/app/finance/account-schemas/account-schemas.component.ts
+sed 's/__PLURAL__/account-transaction-templates/g' /data/CODE/ELIPS/doc/template-s.component.ts  | sed 's/__COMPONENTS__/AccountTransactionTemplates/g' | sed 's/__SCENARIO__/ACCOUNT_TRANSACTION_TEMPLATE/g' > /data/CODE/ELIPS/ncf/src/app/finance/account-transaction-templates/account-transaction-templates.component.ts
+sed 's/__PLURAL__/banks/g' /data/CODE/ELIPS/doc/template-s.component.ts  | sed 's/__COMPONENTS__/Banks/g' | sed 's/__SCENARIO__/BANK/g' > /data/CODE/ELIPS/ncf/src/app/finance/banks/banks.component.ts
+sed 's/__PLURAL__/bank-accounts/g' /data/CODE/ELIPS/doc/template-s.component.ts  | sed 's/__COMPONENTS__/BankAccounts/g' | sed 's/__SCENARIO__/BANK_ACCOUNT/g' > /data/CODE/ELIPS/ncf/src/app/finance/bank-accounts/bank-accounts.component.ts
+sed 's/__PLURAL__/support-areas/g' /data/CODE/ELIPS/doc/template-s.component.ts  | sed 's/__COMPONENTS__/SupportAreas/g' | sed 's/__SCENARIO__/SUPPORT_AREA/g' > /data/CODE/ELIPS/ncf/src/app/helpdesk/support-areas/support-areas.component.ts
+sed 's/__PLURAL__/support-groups/g' /data/CODE/ELIPS/doc/template-s.component.ts  | sed 's/__COMPONENTS__/SupportGroups/g' | sed 's/__SCENARIO__/SUPPORT_GROUP/g' > /data/CODE/ELIPS/ncf/src/app/helpdesk/support-groups/support-groups.component.ts
+sed 's/__PLURAL__/support-tickets/g' /data/CODE/ELIPS/doc/template-s.component.ts  | sed 's/__COMPONENTS__/SupportTickets/g' | sed 's/__SCENARIO__/SUPPORT_TICKET/g' > /data/CODE/ELIPS/ncf/src/app/helpdesk/support-tickets/support-tickets.component.ts
+sed 's/__PLURAL__/ticket-reports/g' /data/CODE/ELIPS/doc/template-s.component.ts  | sed 's/__COMPONENTS__/TicketReports/g' | sed 's/__SCENARIO__/TICKET_REPORT/g' > /data/CODE/ELIPS/ncf/src/app/helpdesk/ticket-reports/ticket-reports.component.ts
+sed 's/__PLURAL__/equipment/g' /data/CODE/ELIPS/doc/template-s.component.ts  | sed 's/__COMPONENTS__/Equipment/g' | sed 's/__SCENARIO__/EQUIPMENT/g' > /data/CODE/ELIPS/ncf/src/app/maintenance/equipment/equipment.component.ts
+sed 's/__PLURAL__/service-types/g' /data/CODE/ELIPS/doc/template-s.component.ts  | sed 's/__COMPONENTS__/ServiceTypes/g' | sed 's/__SCENARIO__/SERVICE_TYPE/g' > /data/CODE/ELIPS/ncf/src/app/maintenance/service-types/service-types.component.ts
+sed 's/__PLURAL__/mx-counter-types/g' /data/CODE/ELIPS/doc/template-s.component.ts  | sed 's/__COMPONENTS__/MxCounterTypes/g' | sed 's/__SCENARIO__/MX_COUNTER_TYPE/g' > /data/CODE/ELIPS/ncf/src/app/maintenance/mx-counter-types/mx-counter-types.component.ts
+sed 's/__PLURAL__/maintenances/g' /data/CODE/ELIPS/doc/template-s.component.ts  | sed 's/__COMPONENTS__/Maintenances/g' | sed 's/__SCENARIO__/MAINTENANCE/g' > /data/CODE/ELIPS/ncf/src/app/maintenance/maintenances/maintenances.component.ts
+sed 's/__PLURAL__/manufacturers/g' /data/CODE/ELIPS/doc/template-s.component.ts  | sed 's/__COMPONENTS__/Manufacturers/g' | sed 's/__SCENARIO__/MANUFACTURER/g' > /data/CODE/ELIPS/ncf/src/app/material/manufacturers/manufacturers.component.ts
+sed 's/__PLURAL__/material-types/g' /data/CODE/ELIPS/doc/template-s.component.ts  | sed 's/__COMPONENTS__/MaterialTypes/g' | sed 's/__SCENARIO__/MATERIAL_TYPE/g' > /data/CODE/ELIPS/ncf/src/app/material/material-types/material-types.component.ts
+sed 's/__PLURAL__/material-attribute-groups/g' /data/CODE/ELIPS/doc/template-s.component.ts  | sed 's/__COMPONENTS__/MaterialAttributeGroups/g' | sed 's/__SCENARIO__/MATERIAL_ATTRIBUTE_GROUP/g' > /data/CODE/ELIPS/ncf/src/app/material/material-attribute-groups/material-attribute-groups.component.ts
+sed 's/__PLURAL__/material-groups/g' /data/CODE/ELIPS/doc/template-s.component.ts  | sed 's/__COMPONENTS__/MaterialGroups/g' | sed 's/__SCENARIO__/MATERIAL_GROUP/g' > /data/CODE/ELIPS/ncf/src/app/material/material-groups/material-groups.component.ts
+sed 's/__PLURAL__/materials/g' /data/CODE/ELIPS/doc/template-s.component.ts  | sed 's/__COMPONENTS__/Materials/g' | sed 's/__SCENARIO__/MATERIAL/g' > /data/CODE/ELIPS/ncf/src/app/material/materials/materials.component.ts
+sed 's/__PLURAL__/qualifications/g' /data/CODE/ELIPS/doc/template-s.component.ts  | sed 's/__COMPONENTS__/Qualifications/g' | sed 's/__SCENARIO__/QUALIFICATION/g' > /data/CODE/ELIPS/ncf/src/app/personnel/qualifications/qualifications.component.ts
+sed 's/__PLURAL__/position-types/g' /data/CODE/ELIPS/doc/template-s.component.ts  | sed 's/__COMPONENTS__/PositionTypes/g' | sed 's/__SCENARIO__/POSITION_TYPE/g' > /data/CODE/ELIPS/ncf/src/app/personnel/position-types/position-types.component.ts
+sed 's/__PLURAL__/organizations/g' /data/CODE/ELIPS/doc/template-s.component.ts  | sed 's/__COMPONENTS__/Organizations/g' | sed 's/__SCENARIO__/ORGANIZATION/g' > /data/CODE/ELIPS/ncf/src/app/personnel/organizations/organizations.component.ts
+sed 's/__PLURAL__/people/g' /data/CODE/ELIPS/doc/template-s.component.ts  | sed 's/__COMPONENTS__/People/g' | sed 's/__SCENARIO__/PERSON/g' > /data/CODE/ELIPS/ncf/src/app/personnel/people/people.component.ts
+sed 's/__PLURAL__/employees/g' /data/CODE/ELIPS/doc/template-s.component.ts  | sed 's/__COMPONENTS__/Employees/g' | sed 's/__SCENARIO__/EMPLOYEE/g' > /data/CODE/ELIPS/ncf/src/app/personnel/employees/employees.component.ts
+sed 's/__PLURAL__/production-resources/g' /data/CODE/ELIPS/doc/template-s.component.ts  | sed 's/__COMPONENTS__/ProductionResources/g' | sed 's/__SCENARIO__/PRODUCTION_RESOURCE/g' > /data/CODE/ELIPS/ncf/src/app/production/production-resources/production-resources.component.ts
+sed 's/__PLURAL__/bom-operations/g' /data/CODE/ELIPS/doc/template-s.component.ts  | sed 's/__COMPONENTS__/BomOperations/g' | sed 's/__SCENARIO__/BOM_OPERATION/g' > /data/CODE/ELIPS/ncf/src/app/production/bom-operations/bom-operations.component.ts
+sed 's/__PLURAL__/production-orders/g' /data/CODE/ELIPS/doc/template-s.component.ts  | sed 's/__COMPONENTS__/ProductionOrders/g' | sed 's/__SCENARIO__/PRODUCTION_ORDER/g' > /data/CODE/ELIPS/ncf/src/app/production/production-orders/production-orders.component.ts
+sed 's/__PLURAL__/categories/g' /data/CODE/ELIPS/doc/template-s.component.ts  | sed 's/__COMPONENTS__/Categories/g' | sed 's/__SCENARIO__/CATEGORY/g' > /data/CODE/ELIPS/ncf/src/app/project/categories/categories.component.ts
+sed 's/__PLURAL__/projects/g' /data/CODE/ELIPS/doc/template-s.component.ts  | sed 's/__COMPONENTS__/Projects/g' | sed 's/__SCENARIO__/PROJECT/g' > /data/CODE/ELIPS/ncf/src/app/project/projects/projects.component.ts
+sed 's/__PLURAL__/subcontractors/g' /data/CODE/ELIPS/doc/template-s.component.ts  | sed 's/__COMPONENTS__/Subcontractors/g' | sed 's/__SCENARIO__/SUBCONTRACTOR/g' > /data/CODE/ELIPS/ncf/src/app/project/subcontractors/subcontractors.component.ts
+sed 's/__PLURAL__/project-manhours/g' /data/CODE/ELIPS/doc/template-s.component.ts  | sed 's/__COMPONENTS__/ProjectManhours/g' | sed 's/__SCENARIO__/PROJECT_MANHOUR/g' > /data/CODE/ELIPS/ncf/src/app/project/project-manhours/project-manhours.component.ts
+sed 's/__PLURAL__/project-quantities/g' /data/CODE/ELIPS/doc/template-s.component.ts  | sed 's/__COMPONENTS__/ProjectQuantities/g' | sed 's/__SCENARIO__/PROJECT_QUANTITY/g' > /data/CODE/ELIPS/ncf/src/app/project/project-quantities/project-quantities.component.ts
+sed 's/__PLURAL__/approve-progress/g' /data/CODE/ELIPS/doc/template-s.component.ts  | sed 's/__COMPONENTS__/ApproveProgress/g' | sed 's/__SCENARIO__/APPROVE_PROGRESS/g' > /data/CODE/ELIPS/ncf/src/app/project/approve-progress/approve-progress.component.ts
+sed 's/__PLURAL__/approve-manhour/g' /data/CODE/ELIPS/doc/template-s.component.ts  | sed 's/__COMPONENTS__/ApproveManhour/g' | sed 's/__SCENARIO__/APPROVE_MANHOUR/g' > /data/CODE/ELIPS/ncf/src/app/project/approve-manhour/approve-manhour.component.ts
+sed 's/__PLURAL__/approve-quantity/g' /data/CODE/ELIPS/doc/template-s.component.ts  | sed 's/__COMPONENTS__/ApproveQuantity/g' | sed 's/__SCENARIO__/APPROVE_QUANTITY/g' > /data/CODE/ELIPS/ncf/src/app/project/approve-quantity/approve-quantity.component.ts
+sed 's/__PLURAL__/project-reports/g' /data/CODE/ELIPS/doc/template-s.component.ts  | sed 's/__COMPONENTS__/ProjectReports/g' | sed 's/__SCENARIO__/PROJECT_REPORT/g' > /data/CODE/ELIPS/ncf/src/app/project/project-reports/project-reports.component.ts
+sed 's/__PLURAL__/request-for-proposal-entry/g' /data/CODE/ELIPS/doc/template-s.component.ts  | sed 's/__COMPONENTS__/RequestForProposalEntry/g' | sed 's/__SCENARIO__/REQUEST_FOR_PROPOSAL_ENTRY/g' > /data/CODE/ELIPS/ncf/src/app/purchase/request-for-proposal-entry/request-for-proposal-entry.component.ts
+sed 's/__PLURAL__/request-for-proposals-initial/g' /data/CODE/ELIPS/doc/template-s.component.ts  | sed 's/__COMPONENTS__/RequestForProposalInitial/g' | sed 's/__SCENARIO__/REQUEST_FOR_PROPOSAL_INITIAL/g' > /data/CODE/ELIPS/ncf/src/app/purchase/request-for-proposals-initial/request-for-proposals-initial.component.ts
+sed 's/__PLURAL__/request-for-proposals-published/g' /data/CODE/ELIPS/doc/template-s.component.ts  | sed 's/__COMPONENTS__/RequestForProposalPublished/g' | sed 's/__SCENARIO__/REQUEST_FOR_PROPOSAL_PUBLISHED/g' > /data/CODE/ELIPS/ncf/src/app/purchase/request-for-proposals-published/request-for-proposals-published.component.ts
+sed 's/__PLURAL__/request-for-proposals-complete/g' /data/CODE/ELIPS/doc/template-s.component.ts  | sed 's/__COMPONENTS__/RequestForProposalComplete/g' | sed 's/__SCENARIO__/REQUEST_FOR_PROPOSAL_COMPLETE/g' > /data/CODE/ELIPS/ncf/src/app/purchase/request-for-proposals-complete/request-for-proposals-complete.component.ts
+sed 's/__PLURAL__/purchase-orders/g' /data/CODE/ELIPS/doc/template-s.component.ts  | sed 's/__COMPONENTS__/PurchaseOrders/g' | sed 's/__SCENARIO__/PURCHASE_ORDER/g' > /data/CODE/ELIPS/ncf/src/app/purchase/purchase-orders/purchase-orders.component.ts
+sed 's/__PLURAL__/purchase-deliveries/g' /data/CODE/ELIPS/doc/template-s.component.ts  | sed 's/__COMPONENTS__/PurchaseDeliveries/g' | sed 's/__SCENARIO__/PURCHASE_DELIVERY/g' > /data/CODE/ELIPS/ncf/src/app/purchase/purchase-deliveries/purchase-deliveries.component.ts
+sed 's/__PLURAL__/purchase-order-deliver/g' /data/CODE/ELIPS/doc/template-s.component.ts  | sed 's/__COMPONENTS__/PurchaseOrderDeliver/g' | sed 's/__SCENARIO__/PURCHASE_ORDER_DELIVER/g' > /data/CODE/ELIPS/ncf/src/app/purchase/purchase-order-deliver/purchase-order-deliver.component.ts
+sed 's/__PLURAL__/material-request-entry/g' /data/CODE/ELIPS/doc/template-s.component.ts  | sed 's/__COMPONENTS__/MaterialRequestEntry/g' | sed 's/__SCENARIO__/MATERIAL_REQUEST_ENTRY/g' > /data/CODE/ELIPS/ncf/src/app/request/material-request-entry/material-request-entry.component.ts
+sed 's/__PLURAL__/material-request-by-define/g' /data/CODE/ELIPS/doc/template-s.component.ts  | sed 's/__COMPONENTS__/MaterialRequestByDefine/g' | sed 's/__SCENARIO__/MATERIAL_REQUEST_BY_DEFINE/g' > /data/CODE/ELIPS/ncf/src/app/request/material-request-by-define/material-request-by-define.component.ts
+sed 's/__PLURAL__/material-requests/g' /data/CODE/ELIPS/doc/template-s.component.ts  | sed 's/__COMPONENTS__/MaterialRequests/g' | sed 's/__SCENARIO__/MATERIAL_REQUEST/g' > /data/CODE/ELIPS/ncf/src/app/request/material-requests/material-requests.component.ts
+sed 's/__PLURAL__/material-request-reports/g' /data/CODE/ELIPS/doc/template-s.component.ts  | sed 's/__COMPONENTS__/MaterialRequestReports/g' | sed 's/__SCENARIO__/MATERIAL_REQUEST_REPORT/g' > /data/CODE/ELIPS/ncf/src/app/request/material-request-reports/material-request-reports.component.ts
+sed 's/__PLURAL__/product-prices/g' /data/CODE/ELIPS/doc/template-s.component.ts  | sed 's/__COMPONENTS__/ProductPrices/g' | sed 's/__SCENARIO__/PRODUCT_PRICE/g' > /data/CODE/ELIPS/ncf/src/app/sales/product-prices/product-prices.component.ts
+sed 's/__PLURAL__/sales-campaigns/g' /data/CODE/ELIPS/doc/template-s.component.ts  | sed 's/__COMPONENTS__/SalesCampaigns/g' | sed 's/__SCENARIO__/SALES_CAMPAIGN/g' > /data/CODE/ELIPS/ncf/src/app/sales/sales-campaigns/sales-campaigns.component.ts
+sed 's/__PLURAL__/product-price-commitment-fast/g' /data/CODE/ELIPS/doc/template-s.component.ts  | sed 's/__COMPONENTS__/ProductPriceCommitmentFast/g' | sed 's/__SCENARIO__/PRODUCT_PRICE_COMMITMENT_FAST/g' > /data/CODE/ELIPS/ncf/src/app/sales/product-price-commitment-fast/product-price-commitment-fast.component.ts
+sed 's/__PLURAL__/product-price-commitments/g' /data/CODE/ELIPS/doc/template-s.component.ts  | sed 's/__COMPONENTS__/ProductPriceCommitments/g' | sed 's/__SCENARIO__/PRODUCT_PRICE_COMMITMENT/g' > /data/CODE/ELIPS/ncf/src/app/sales/product-price-commitments/product-price-commitments.component.ts
+sed 's/__PLURAL__/sales-cart/g' /data/CODE/ELIPS/doc/template-s.component.ts  | sed 's/__COMPONENTS__/SalesCart/g' | sed 's/__SCENARIO__/SALES_CART/g' > /data/CODE/ELIPS/ncf/src/app/sales/sales-cart/sales-cart.component.ts
+sed 's/__PLURAL__/sales-orders/g' /data/CODE/ELIPS/doc/template-s.component.ts  | sed 's/__COMPONENTS__/SalesOrders/g' | sed 's/__SCENARIO__/SALES_ORDER/g' > /data/CODE/ELIPS/ncf/src/app/sales/sales-orders/sales-orders.component.ts
+sed 's/__PLURAL__/my-sales-orders/g' /data/CODE/ELIPS/doc/template-s.component.ts  | sed 's/__COMPONENTS__/MySalesOrders/g' | sed 's/__SCENARIO__/MY_SALES_ORDER/g' > /data/CODE/ELIPS/ncf/src/app/sales/my-sales-orders/my-sales-orders.component.ts
+sed 's/__PLURAL__/sales-reports/g' /data/CODE/ELIPS/doc/template-s.component.ts  | sed 's/__COMPONENTS__/SalesReports/g' | sed 's/__SCENARIO__/SALES_REPORT/g' > /data/CODE/ELIPS/ncf/src/app/sales/sales-reports/sales-reports.component.ts
+sed 's/__PLURAL__/sales-owner-reports/g' /data/CODE/ELIPS/doc/template-s.component.ts  | sed 's/__COMPONENTS__/SalesOwnerReports/g' | sed 's/__SCENARIO__/SALES_OWNER_REPORT/g' > /data/CODE/ELIPS/ncf/src/app/sales/sales-owner-reports/sales-owner-reports.component.ts
+sed 's/__PLURAL__/sales-vendor-reports/g' /data/CODE/ELIPS/doc/template-s.component.ts  | sed 's/__COMPONENTS__/SalesVendorReports/g' | sed 's/__SCENARIO__/SALES_VENDOR_REPORT/g' > /data/CODE/ELIPS/ncf/src/app/sales/sales-vendor-reports/sales-vendor-reports.component.ts
+sed 's/__PLURAL__/sales-customer-reports/g' /data/CODE/ELIPS/doc/template-s.component.ts  | sed 's/__COMPONENTS__/SalesCustomerReports/g' | sed 's/__SCENARIO__/SALES_CUSTOMER_REPORT/g' > /data/CODE/ELIPS/ncf/src/app/sales/sales-customer-reports/sales-customer-reports.component.ts
+sed 's/__PLURAL__/authority-groups/g' /data/CODE/ELIPS/doc/template-s.component.ts  | sed 's/__COMPONENTS__/AuthorityGroups/g' | sed 's/__SCENARIO__/AUTHORITY_GROUP/g' > /data/CODE/ELIPS/ncf/src/app/settings/authority-groups/authority-groups.component.ts
+sed 's/__PLURAL__/menus/g' /data/CODE/ELIPS/doc/template-s.component.ts  | sed 's/__COMPONENTS__/Menus/g' | sed 's/__SCENARIO__/MENU/g' > /data/CODE/ELIPS/ncf/src/app/settings/menus/menus.component.ts
+sed 's/__PLURAL__/user-accounts/g' /data/CODE/ELIPS/doc/template-s.component.ts  | sed 's/__COMPONENTS__/UserAccounts/g' | sed 's/__SCENARIO__/USER_ACCOUNT/g' > /data/CODE/ELIPS/ncf/src/app/settings/user-accounts/user-accounts.component.ts
+sed 's/__PLURAL__/domains/g' /data/CODE/ELIPS/doc/template-s.component.ts  | sed 's/__COMPONENTS__/Domains/g' | sed 's/__SCENARIO__/DOMAIN/g' > /data/CODE/ELIPS/ncf/src/app/settings/domains/domains.component.ts
+sed 's/__PLURAL__/languages/g' /data/CODE/ELIPS/doc/template-s.component.ts  | sed 's/__COMPONENTS__/Languages/g' | sed 's/__SCENARIO__/LANGUAGE/g' > /data/CODE/ELIPS/ncf/src/app/settings/languages/languages.component.ts
+sed 's/__PLURAL__/unit-conversions/g' /data/CODE/ELIPS/doc/template-s.component.ts  | sed 's/__COMPONENTS__/UnitConversions/g' | sed 's/__SCENARIO__/UNIT_CONVERSION/g' > /data/CODE/ELIPS/ncf/src/app/settings/unit-conversions/unit-conversions.component.ts
+sed 's/__PLURAL__/content-servers/g' /data/CODE/ELIPS/doc/template-s.component.ts  | sed 's/__COMPONENTS__/ContentServers/g' | sed 's/__SCENARIO__/CONTENT_SERVER/g' > /data/CODE/ELIPS/ncf/src/app/settings/content-servers/content-servers.component.ts
+sed 's/__PLURAL__/content-upload/g' /data/CODE/ELIPS/doc/template-s.component.ts  | sed 's/__COMPONENTS__/ContentUpload/g' | sed 's/__SCENARIO__/CONTENT_UPLOAD/g' > /data/CODE/ELIPS/ncf/src/app/settings/content-upload/content-upload.component.ts
+sed 's/__PLURAL__/notification-types/g' /data/CODE/ELIPS/doc/template-s.component.ts  | sed 's/__COMPONENTS__/NotificationTypes/g' | sed 's/__SCENARIO__/NOTIFICATION_TYPE/g' > /data/CODE/ELIPS/ncf/src/app/settings/notification-types/notification-types.component.ts
+sed 's/__PLURAL__/table-controller-statics/g' /data/CODE/ELIPS/doc/template-s.component.ts  | sed 's/__COMPONENTS__/TableControllerStatics/g' | sed 's/__SCENARIO__/TABLE_CONTROLLER_STATIC/g' > /data/CODE/ELIPS/ncf/src/app/settings/table-controller-statics/table-controller-statics.component.ts
+sed 's/__PLURAL__/table-view-scenarios/g' /data/CODE/ELIPS/doc/template-s.component.ts  | sed 's/__COMPONENTS__/TableViewScenarios/g' | sed 's/__SCENARIO__/TABLE_VIEW_SCENARIO/g' > /data/CODE/ELIPS/ncf/src/app/settings/table-view-scenarios/table-view-scenarios.component.ts
+sed 's/__PLURAL__/shipments/g' /data/CODE/ELIPS/doc/template-s.component.ts  | sed 's/__COMPONENTS__/Shipments/g' | sed 's/__SCENARIO__/SHIPMENT/g' > /data/CODE/ELIPS/ncf/src/app/shipment/shipments/shipments.component.ts
+sed 's/__PLURAL__/shipment-reports/g' /data/CODE/ELIPS/doc/template-s.component.ts  | sed 's/__COMPONENTS__/ShipmentReports/g' | sed 's/__SCENARIO__/SHIPMENT_REPORT/g' > /data/CODE/ELIPS/ncf/src/app/shipment/shipment-reports/shipment-reports.component.ts
+
+
+
+
+
+
+
+
+
+sed 's/__SINGULAR__/business-service/g' /data/CODE/ELIPS/doc/template-form.component.ts  | sed 's/__COMPONENT__/BusinessService/g' | sed 's/__SCENARIO__/BUSINESS_SERVICE/g' > /data/CODE/ELIPS/ncf/src/app/business/business-service-form/business-service-form.component.ts
+sed 's/__SINGULAR__/partner-certification-type/g' /data/CODE/ELIPS/doc/template-form.component.ts  | sed 's/__COMPONENT__/PartnerCertificationType/g' | sed 's/__SCENARIO__/PARTNER_CERTIFICATION_TYPE/g' > /data/CODE/ELIPS/ncf/src/app/business/partner-certification-type-form/partner-certification-type-form.component.ts
+sed 's/__SINGULAR__/business-partner/g' /data/CODE/ELIPS/doc/template-form.component.ts  | sed 's/__COMPONENT__/BusinessPartner/g' | sed 's/__SCENARIO__/BUSINESS_PARTNER/g' > /data/CODE/ELIPS/ncf/src/app/business/business-partner-form/business-partner-form.component.ts
+sed 's/__SINGULAR__/business-owner/g' /data/CODE/ELIPS/doc/template-form.component.ts  | sed 's/__COMPONENT__/BusinessOwner/g' | sed 's/__SCENARIO__/BUSINESS_OWNER/g' > /data/CODE/ELIPS/ncf/src/app/business/business-owner-form/business-owner-form.component.ts
+sed 's/__SINGULAR__/vendor/g' /data/CODE/ELIPS/doc/template-form.component.ts  | sed 's/__COMPONENT__/Vendor/g' | sed 's/__SCENARIO__/VENDOR/g' > /data/CODE/ELIPS/ncf/src/app/business/vendor-form/vendor-form.component.ts
+sed 's/__SINGULAR__/customer/g' /data/CODE/ELIPS/doc/template-form.component.ts  | sed 's/__COMPONENT__/Customer/g' | sed 's/__SCENARIO__/CUSTOMER/g' > /data/CODE/ELIPS/ncf/src/app/business/customer-form/customer-form.component.ts
+sed 's/__SINGULAR__/my-company/g' /data/CODE/ELIPS/doc/template-form.component.ts  | sed 's/__COMPONENT__/MyCompany/g' | sed 's/__SCENARIO__/MY_COMPANY/g' > /data/CODE/ELIPS/ncf/src/app/business/my-company-form/my-company-form.component.ts
+sed 's/__SINGULAR__/business-report/g' /data/CODE/ELIPS/doc/template-form.component.ts  | sed 's/__COMPONENT__/BusinessReport/g' | sed 's/__SCENARIO__/BUSINESS_REPORT/g' > /data/CODE/ELIPS/ncf/src/app/business/business-report-form/business-report-form.component.ts
+sed 's/__SINGULAR__/tax-type/g' /data/CODE/ELIPS/doc/template-form.component.ts  | sed 's/__COMPONENT__/TaxType/g' | sed 's/__SCENARIO__/TAX_TYPE/g' > /data/CODE/ELIPS/ncf/src/app/finance/tax-type-form/tax-type-form.component.ts
+sed 's/__SINGULAR__/account-master/g' /data/CODE/ELIPS/doc/template-form.component.ts  | sed 's/__COMPONENT__/AccountMaster/g' | sed 's/__SCENARIO__/ACCOUNT_MASTER/g' > /data/CODE/ELIPS/ncf/src/app/finance/account-master-form/account-master-form.component.ts
+sed 's/__SINGULAR__/account-schema/g' /data/CODE/ELIPS/doc/template-form.component.ts  | sed 's/__COMPONENT__/AccountSchema/g' | sed 's/__SCENARIO__/ACCOUNT_SCHEMA/g' > /data/CODE/ELIPS/ncf/src/app/finance/account-schema-form/account-schema-form.component.ts
+sed 's/__SINGULAR__/account-transaction-template/g' /data/CODE/ELIPS/doc/template-form.component.ts  | sed 's/__COMPONENT__/AccountTransactionTemplate/g' | sed 's/__SCENARIO__/ACCOUNT_TRANSACTION_TEMPLATE/g' > /data/CODE/ELIPS/ncf/src/app/finance/account-transaction-template-form/account-transaction-template-form.component.ts
+sed 's/__SINGULAR__/bank/g' /data/CODE/ELIPS/doc/template-form.component.ts  | sed 's/__COMPONENT__/Bank/g' | sed 's/__SCENARIO__/BANK/g' > /data/CODE/ELIPS/ncf/src/app/finance/bank-form/bank-form.component.ts
+sed 's/__SINGULAR__/bank-account/g' /data/CODE/ELIPS/doc/template-form.component.ts  | sed 's/__COMPONENT__/BankAccount/g' | sed 's/__SCENARIO__/BANK_ACCOUNT/g' > /data/CODE/ELIPS/ncf/src/app/finance/bank-account-form/bank-account-form.component.ts
+sed 's/__SINGULAR__/support-area/g' /data/CODE/ELIPS/doc/template-form.component.ts  | sed 's/__COMPONENT__/SupportArea/g' | sed 's/__SCENARIO__/SUPPORT_AREA/g' > /data/CODE/ELIPS/ncf/src/app/helpdesk/support-area-form/support-area-form.component.ts
+sed 's/__SINGULAR__/support-group/g' /data/CODE/ELIPS/doc/template-form.component.ts  | sed 's/__COMPONENT__/SupportGroup/g' | sed 's/__SCENARIO__/SUPPORT_GROUP/g' > /data/CODE/ELIPS/ncf/src/app/helpdesk/support-group-form/support-group-form.component.ts
+sed 's/__SINGULAR__/support-ticket/g' /data/CODE/ELIPS/doc/template-form.component.ts  | sed 's/__COMPONENT__/SupportTicket/g' | sed 's/__SCENARIO__/SUPPORT_TICKET/g' > /data/CODE/ELIPS/ncf/src/app/helpdesk/support-ticket-form/support-ticket-form.component.ts
+sed 's/__SINGULAR__/ticket-report/g' /data/CODE/ELIPS/doc/template-form.component.ts  | sed 's/__COMPONENT__/TicketReport/g' | sed 's/__SCENARIO__/TICKET_REPORT/g' > /data/CODE/ELIPS/ncf/src/app/helpdesk/ticket-report-form/ticket-report-form.component.ts
+sed 's/__SINGULAR__/equipment/g' /data/CODE/ELIPS/doc/template-form.component.ts  | sed 's/__COMPONENT__/Equipment/g' | sed 's/__SCENARIO__/EQUIPMENT/g' > /data/CODE/ELIPS/ncf/src/app/maintenance/equipment-form/equipment-form.component.ts
+sed 's/__SINGULAR__/service-type/g' /data/CODE/ELIPS/doc/template-form.component.ts  | sed 's/__COMPONENT__/ServiceType/g' | sed 's/__SCENARIO__/SERVICE_TYPE/g' > /data/CODE/ELIPS/ncf/src/app/maintenance/service-type-form/service-type-form.component.ts
+sed 's/__SINGULAR__/mx-counter-type/g' /data/CODE/ELIPS/doc/template-form.component.ts  | sed 's/__COMPONENT__/MxCounterType/g' | sed 's/__SCENARIO__/MX_COUNTER_TYPE/g' > /data/CODE/ELIPS/ncf/src/app/maintenance/mx-counter-type-form/mx-counter-type-form.component.ts
+sed 's/__SINGULAR__/maintenance/g' /data/CODE/ELIPS/doc/template-form.component.ts  | sed 's/__COMPONENT__/Maintenance/g' | sed 's/__SCENARIO__/MAINTENANCE/g' > /data/CODE/ELIPS/ncf/src/app/maintenance/maintenance-form/maintenance-form.component.ts
+sed 's/__SINGULAR__/manufacturer/g' /data/CODE/ELIPS/doc/template-form.component.ts  | sed 's/__COMPONENT__/Manufacturer/g' | sed 's/__SCENARIO__/MANUFACTURER/g' > /data/CODE/ELIPS/ncf/src/app/material/manufacturer-form/manufacturer-form.component.ts
+sed 's/__SINGULAR__/material-type/g' /data/CODE/ELIPS/doc/template-form.component.ts  | sed 's/__COMPONENT__/MaterialType/g' | sed 's/__SCENARIO__/MATERIAL_TYPE/g' > /data/CODE/ELIPS/ncf/src/app/material/material-type-form/material-type-form.component.ts
+sed 's/__SINGULAR__/material-attribute-group/g' /data/CODE/ELIPS/doc/template-form.component.ts  | sed 's/__COMPONENT__/MaterialAttributeGroup/g' | sed 's/__SCENARIO__/MATERIAL_ATTRIBUTE_GROUP/g' > /data/CODE/ELIPS/ncf/src/app/material/material-attribute-group-form/material-attribute-group-form.component.ts
+sed 's/__SINGULAR__/material-group/g' /data/CODE/ELIPS/doc/template-form.component.ts  | sed 's/__COMPONENT__/MaterialGroup/g' | sed 's/__SCENARIO__/MATERIAL_GROUP/g' > /data/CODE/ELIPS/ncf/src/app/material/material-group-form/material-group-form.component.ts
+sed 's/__SINGULAR__/material/g' /data/CODE/ELIPS/doc/template-form.component.ts  | sed 's/__COMPONENT__/Material/g' | sed 's/__SCENARIO__/MATERIAL/g' > /data/CODE/ELIPS/ncf/src/app/material/material-form/material-form.component.ts
+sed 's/__SINGULAR__/qualification/g' /data/CODE/ELIPS/doc/template-form.component.ts  | sed 's/__COMPONENT__/Qualification/g' | sed 's/__SCENARIO__/QUALIFICATION/g' > /data/CODE/ELIPS/ncf/src/app/personnel/qualification-form/qualification-form.component.ts
+sed 's/__SINGULAR__/position-type/g' /data/CODE/ELIPS/doc/template-form.component.ts  | sed 's/__COMPONENT__/PositionType/g' | sed 's/__SCENARIO__/POSITION_TYPE/g' > /data/CODE/ELIPS/ncf/src/app/personnel/position-type-form/position-type-form.component.ts
+sed 's/__SINGULAR__/organization/g' /data/CODE/ELIPS/doc/template-form.component.ts  | sed 's/__COMPONENT__/Organization/g' | sed 's/__SCENARIO__/ORGANIZATION/g' > /data/CODE/ELIPS/ncf/src/app/personnel/organization-form/organization-form.component.ts
+sed 's/__SINGULAR__/person/g' /data/CODE/ELIPS/doc/template-form.component.ts  | sed 's/__COMPONENT__/Person/g' | sed 's/__SCENARIO__/PERSON/g' > /data/CODE/ELIPS/ncf/src/app/personnel/person-form/person-form.component.ts
+sed 's/__SINGULAR__/employee/g' /data/CODE/ELIPS/doc/template-form.component.ts  | sed 's/__COMPONENT__/Employee/g' | sed 's/__SCENARIO__/EMPLOYEE/g' > /data/CODE/ELIPS/ncf/src/app/personnel/employee-form/employee-form.component.ts
+sed 's/__SINGULAR__/production-resource/g' /data/CODE/ELIPS/doc/template-form.component.ts  | sed 's/__COMPONENT__/ProductionResource/g' | sed 's/__SCENARIO__/PRODUCTION_RESOURCE/g' > /data/CODE/ELIPS/ncf/src/app/production/production-resource-form/production-resource-form.component.ts
+sed 's/__SINGULAR__/bom-operation/g' /data/CODE/ELIPS/doc/template-form.component.ts  | sed 's/__COMPONENT__/BomOperation/g' | sed 's/__SCENARIO__/BOM_OPERATION/g' > /data/CODE/ELIPS/ncf/src/app/production/bom-operation-form/bom-operation-form.component.ts
+sed 's/__SINGULAR__/production-order/g' /data/CODE/ELIPS/doc/template-form.component.ts  | sed 's/__COMPONENT__/ProductionOrder/g' | sed 's/__SCENARIO__/PRODUCTION_ORDER/g' > /data/CODE/ELIPS/ncf/src/app/production/production-order-form/production-order-form.component.ts
+sed 's/__SINGULAR__/category/g' /data/CODE/ELIPS/doc/template-form.component.ts  | sed 's/__COMPONENT__/Category/g' | sed 's/__SCENARIO__/CATEGORY/g' > /data/CODE/ELIPS/ncf/src/app/project/category-form/category-form.component.ts
+sed 's/__SINGULAR__/project/g' /data/CODE/ELIPS/doc/template-form.component.ts  | sed 's/__COMPONENT__/Project/g' | sed 's/__SCENARIO__/PROJECT/g' > /data/CODE/ELIPS/ncf/src/app/project/project-form/project-form.component.ts
+sed 's/__SINGULAR__/subcontractor/g' /data/CODE/ELIPS/doc/template-form.component.ts  | sed 's/__COMPONENT__/Subcontractor/g' | sed 's/__SCENARIO__/SUBCONTRACTOR/g' > /data/CODE/ELIPS/ncf/src/app/project/subcontractor-form/subcontractor-form.component.ts
+sed 's/__SINGULAR__/project-manhour/g' /data/CODE/ELIPS/doc/template-form.component.ts  | sed 's/__COMPONENT__/ProjectManhour/g' | sed 's/__SCENARIO__/PROJECT_MANHOUR/g' > /data/CODE/ELIPS/ncf/src/app/project/project-manhour-form/project-manhour-form.component.ts
+sed 's/__SINGULAR__/project-quantity/g' /data/CODE/ELIPS/doc/template-form.component.ts  | sed 's/__COMPONENT__/ProjectQuantity/g' | sed 's/__SCENARIO__/PROJECT_QUANTITY/g' > /data/CODE/ELIPS/ncf/src/app/project/project-quantity-form/project-quantity-form.component.ts
+sed 's/__SINGULAR__/approve-progress/g' /data/CODE/ELIPS/doc/template-form.component.ts  | sed 's/__COMPONENT__/ApproveProgress/g' | sed 's/__SCENARIO__/APPROVE_PROGRESS/g' > /data/CODE/ELIPS/ncf/src/app/project/approve-progress-form/approve-progress-form.component.ts
+sed 's/__SINGULAR__/approve-manhour/g' /data/CODE/ELIPS/doc/template-form.component.ts  | sed 's/__COMPONENT__/ApproveManhour/g' | sed 's/__SCENARIO__/APPROVE_MANHOUR/g' > /data/CODE/ELIPS/ncf/src/app/project/approve-manhour-form/approve-manhour-form.component.ts
+sed 's/__SINGULAR__/approve-quantity/g' /data/CODE/ELIPS/doc/template-form.component.ts  | sed 's/__COMPONENT__/ApproveQuantity/g' | sed 's/__SCENARIO__/APPROVE_QUANTITY/g' > /data/CODE/ELIPS/ncf/src/app/project/approve-quantity-form/approve-quantity-form.component.ts
+sed 's/__SINGULAR__/project-report/g' /data/CODE/ELIPS/doc/template-form.component.ts  | sed 's/__COMPONENT__/ProjectReport/g' | sed 's/__SCENARIO__/PROJECT_REPORT/g' > /data/CODE/ELIPS/ncf/src/app/project/project-report-form/project-report-form.component.ts
+sed 's/__SINGULAR__/request-for-proposal-entry/g' /data/CODE/ELIPS/doc/template-form.component.ts  | sed 's/__COMPONENT__/RequestForProposalEntry/g' | sed 's/__SCENARIO__/REQUEST_FOR_PROPOSAL_ENTRY/g' > /data/CODE/ELIPS/ncf/src/app/purchase/request-for-proposal-entry-form/request-for-proposal-entry-form.component.ts
+sed 's/__SINGULAR__/request-for-proposal-initial/g' /data/CODE/ELIPS/doc/template-form.component.ts  | sed 's/__COMPONENT__/RequestForProposalInitial/g' | sed 's/__SCENARIO__/REQUEST_FOR_PROPOSAL_INITIAL/g' > /data/CODE/ELIPS/ncf/src/app/purchase/request-for-proposal-initial-form/request-for-proposal-initial-form.component.ts
+sed 's/__SINGULAR__/request-for-proposal-published/g' /data/CODE/ELIPS/doc/template-form.component.ts  | sed 's/__COMPONENT__/RequestForProposalPublished/g' | sed 's/__SCENARIO__/REQUEST_FOR_PROPOSAL_PUBLISHED/g' > /data/CODE/ELIPS/ncf/src/app/purchase/request-for-proposal-published-form/request-for-proposal-published-form.component.ts
+sed 's/__SINGULAR__/request-for-proposal-complete/g' /data/CODE/ELIPS/doc/template-form.component.ts  | sed 's/__COMPONENT__/RequestForProposalComplete/g' | sed 's/__SCENARIO__/REQUEST_FOR_PROPOSAL_COMPLETE/g' > /data/CODE/ELIPS/ncf/src/app/purchase/request-for-proposal-complete-form/request-for-proposal-complete-form.component.ts
+sed 's/__SINGULAR__/purchase-order/g' /data/CODE/ELIPS/doc/template-form.component.ts  | sed 's/__COMPONENT__/PurchaseOrder/g' | sed 's/__SCENARIO__/PURCHASE_ORDER/g' > /data/CODE/ELIPS/ncf/src/app/purchase/purchase-order-form/purchase-order-form.component.ts
+sed 's/__SINGULAR__/purchase-delivery/g' /data/CODE/ELIPS/doc/template-form.component.ts  | sed 's/__COMPONENT__/PurchaseDelivery/g' | sed 's/__SCENARIO__/PURCHASE_DELIVERY/g' > /data/CODE/ELIPS/ncf/src/app/purchase/purchase-delivery-form/purchase-delivery-form.component.ts
+sed 's/__SINGULAR__/purchase-order-deliver/g' /data/CODE/ELIPS/doc/template-form.component.ts  | sed 's/__COMPONENT__/PurchaseOrderDeliver/g' | sed 's/__SCENARIO__/PURCHASE_ORDER_DELIVER/g' > /data/CODE/ELIPS/ncf/src/app/purchase/purchase-order-deliver-form/purchase-order-deliver-form.component.ts
+sed 's/__SINGULAR__/material-request-entry/g' /data/CODE/ELIPS/doc/template-form.component.ts  | sed 's/__COMPONENT__/MaterialRequestEntry/g' | sed 's/__SCENARIO__/MATERIAL_REQUEST_ENTRY/g' > /data/CODE/ELIPS/ncf/src/app/request/material-request-entry-form/material-request-entry-form.component.ts
+sed 's/__SINGULAR__/material-request-by-define/g' /data/CODE/ELIPS/doc/template-form.component.ts  | sed 's/__COMPONENT__/MaterialRequestByDefine/g' | sed 's/__SCENARIO__/MATERIAL_REQUEST_BY_DEFINE/g' > /data/CODE/ELIPS/ncf/src/app/request/material-request-by-define-form/material-request-by-define-form.component.ts
+sed 's/__SINGULAR__/material-request/g' /data/CODE/ELIPS/doc/template-form.component.ts  | sed 's/__COMPONENT__/MaterialRequest/g' | sed 's/__SCENARIO__/MATERIAL_REQUEST/g' > /data/CODE/ELIPS/ncf/src/app/request/material-request-form/material-request-form.component.ts
+sed 's/__SINGULAR__/material-request-report/g' /data/CODE/ELIPS/doc/template-form.component.ts  | sed 's/__COMPONENT__/MaterialRequestReport/g' | sed 's/__SCENARIO__/MATERIAL_REQUEST_REPORT/g' > /data/CODE/ELIPS/ncf/src/app/request/material-request-report-form/material-request-report-form.component.ts
+sed 's/__SINGULAR__/product-price/g' /data/CODE/ELIPS/doc/template-form.component.ts  | sed 's/__COMPONENT__/ProductPrice/g' | sed 's/__SCENARIO__/PRODUCT_PRICE/g' > /data/CODE/ELIPS/ncf/src/app/sales/product-price-form/product-price-form.component.ts
+sed 's/__SINGULAR__/sales-campaign/g' /data/CODE/ELIPS/doc/template-form.component.ts  | sed 's/__COMPONENT__/SalesCampaign/g' | sed 's/__SCENARIO__/SALES_CAMPAIGN/g' > /data/CODE/ELIPS/ncf/src/app/sales/sales-campaign-form/sales-campaign-form.component.ts
+sed 's/__SINGULAR__/product-price-commitment-fast/g' /data/CODE/ELIPS/doc/template-form.component.ts  | sed 's/__COMPONENT__/ProductPriceCommitmentFast/g' | sed 's/__SCENARIO__/PRODUCT_PRICE_COMMITMENT_FAST/g' > /data/CODE/ELIPS/ncf/src/app/sales/product-price-commitment-fast-form/product-price-commitment-fast-form.component.ts
+sed 's/__SINGULAR__/product-price-commitment/g' /data/CODE/ELIPS/doc/template-form.component.ts  | sed 's/__COMPONENT__/ProductPriceCommitment/g' | sed 's/__SCENARIO__/PRODUCT_PRICE_COMMITMENT/g' > /data/CODE/ELIPS/ncf/src/app/sales/product-price-commitment-form/product-price-commitment-form.component.ts
+sed 's/__SINGULAR__/sales-cart/g' /data/CODE/ELIPS/doc/template-form.component.ts  | sed 's/__COMPONENT__/SalesCart/g' | sed 's/__SCENARIO__/SALES_CART/g' > /data/CODE/ELIPS/ncf/src/app/sales/sales-cart-form/sales-cart-form.component.ts
+sed 's/__SINGULAR__/sales-order/g' /data/CODE/ELIPS/doc/template-form.component.ts  | sed 's/__COMPONENT__/SalesOrder/g' | sed 's/__SCENARIO__/SALES_ORDER/g' > /data/CODE/ELIPS/ncf/src/app/sales/sales-order-form/sales-order-form.component.ts
+sed 's/__SINGULAR__/my-sales-order/g' /data/CODE/ELIPS/doc/template-form.component.ts  | sed 's/__COMPONENT__/MySalesOrder/g' | sed 's/__SCENARIO__/MY_SALES_ORDER/g' > /data/CODE/ELIPS/ncf/src/app/sales/my-sales-order-form/my-sales-order-form.component.ts
+sed 's/__SINGULAR__/sales-report/g' /data/CODE/ELIPS/doc/template-form.component.ts  | sed 's/__COMPONENT__/SalesReport/g' | sed 's/__SCENARIO__/SALES_REPORT/g' > /data/CODE/ELIPS/ncf/src/app/sales/sales-report-form/sales-report-form.component.ts
+sed 's/__SINGULAR__/sales-owner-report/g' /data/CODE/ELIPS/doc/template-form.component.ts  | sed 's/__COMPONENT__/SalesOwnerReport/g' | sed 's/__SCENARIO__/SALES_OWNER_REPORT/g' > /data/CODE/ELIPS/ncf/src/app/sales/sales-owner-report-form/sales-owner-report-form.component.ts
+sed 's/__SINGULAR__/sales-vendor-report/g' /data/CODE/ELIPS/doc/template-form.component.ts  | sed 's/__COMPONENT__/SalesVendorReport/g' | sed 's/__SCENARIO__/SALES_VENDOR_REPORT/g' > /data/CODE/ELIPS/ncf/src/app/sales/sales-vendor-report-form/sales-vendor-report-form.component.ts
+sed 's/__SINGULAR__/sales-customer-report/g' /data/CODE/ELIPS/doc/template-form.component.ts  | sed 's/__COMPONENT__/SalesCustomerReport/g' | sed 's/__SCENARIO__/SALES_CUSTOMER_REPORT/g' > /data/CODE/ELIPS/ncf/src/app/sales/sales-customer-report-form/sales-customer-report-form.component.ts
+sed 's/__SINGULAR__/authority-group/g' /data/CODE/ELIPS/doc/template-form.component.ts  | sed 's/__COMPONENT__/AuthorityGroup/g' | sed 's/__SCENARIO__/AUTHORITY_GROUP/g' > /data/CODE/ELIPS/ncf/src/app/settings/authority-group-form/authority-group-form.component.ts
+sed 's/__SINGULAR__/menu/g' /data/CODE/ELIPS/doc/template-form.component.ts  | sed 's/__COMPONENT__/Menu/g' | sed 's/__SCENARIO__/MENU/g' > /data/CODE/ELIPS/ncf/src/app/settings/menu-form/menu-form.component.ts
+sed 's/__SINGULAR__/user-account/g' /data/CODE/ELIPS/doc/template-form.component.ts  | sed 's/__COMPONENT__/UserAccount/g' | sed 's/__SCENARIO__/USER_ACCOUNT/g' > /data/CODE/ELIPS/ncf/src/app/settings/user-account-form/user-account-form.component.ts
+sed 's/__SINGULAR__/domain/g' /data/CODE/ELIPS/doc/template-form.component.ts  | sed 's/__COMPONENT__/Domain/g' | sed 's/__SCENARIO__/DOMAIN/g' > /data/CODE/ELIPS/ncf/src/app/settings/domain-form/domain-form.component.ts
+sed 's/__SINGULAR__/language/g' /data/CODE/ELIPS/doc/template-form.component.ts  | sed 's/__COMPONENT__/Language/g' | sed 's/__SCENARIO__/LANGUAGE/g' > /data/CODE/ELIPS/ncf/src/app/settings/language-form/language-form.component.ts
+sed 's/__SINGULAR__/unit-conversion/g' /data/CODE/ELIPS/doc/template-form.component.ts  | sed 's/__COMPONENT__/UnitConversion/g' | sed 's/__SCENARIO__/UNIT_CONVERSION/g' > /data/CODE/ELIPS/ncf/src/app/settings/unit-conversion-form/unit-conversion-form.component.ts
+sed 's/__SINGULAR__/content-server/g' /data/CODE/ELIPS/doc/template-form.component.ts  | sed 's/__COMPONENT__/ContentServer/g' | sed 's/__SCENARIO__/CONTENT_SERVER/g' > /data/CODE/ELIPS/ncf/src/app/settings/content-server-form/content-server-form.component.ts
+sed 's/__SINGULAR__/content-upload/g' /data/CODE/ELIPS/doc/template-form.component.ts  | sed 's/__COMPONENT__/ContentUpload/g' | sed 's/__SCENARIO__/CONTENT_UPLOAD/g' > /data/CODE/ELIPS/ncf/src/app/settings/content-upload-form/content-upload-form.component.ts
+sed 's/__SINGULAR__/notification-type/g' /data/CODE/ELIPS/doc/template-form.component.ts  | sed 's/__COMPONENT__/NotificationType/g' | sed 's/__SCENARIO__/NOTIFICATION_TYPE/g' > /data/CODE/ELIPS/ncf/src/app/settings/notification-type-form/notification-type-form.component.ts
+sed 's/__SINGULAR__/table-controller-static/g' /data/CODE/ELIPS/doc/template-form.component.ts  | sed 's/__COMPONENT__/TableControllerStatic/g' | sed 's/__SCENARIO__/TABLE_CONTROLLER_STATIC/g' > /data/CODE/ELIPS/ncf/src/app/settings/table-controller-static-form/table-controller-static-form.component.ts
+sed 's/__SINGULAR__/table-view-scenario/g' /data/CODE/ELIPS/doc/template-form.component.ts  | sed 's/__COMPONENT__/TableViewScenario/g' | sed 's/__SCENARIO__/TABLE_VIEW_SCENARIO/g' > /data/CODE/ELIPS/ncf/src/app/settings/table-view-scenario-form/table-view-scenario-form.component.ts
+sed 's/__SINGULAR__/shipment/g' /data/CODE/ELIPS/doc/template-form.component.ts  | sed 's/__COMPONENT__/Shipment/g' | sed 's/__SCENARIO__/SHIPMENT/g' > /data/CODE/ELIPS/ncf/src/app/shipment/shipment-form/shipment-form.component.ts
+sed 's/__SINGULAR__/shipment-report/g' /data/CODE/ELIPS/doc/template-form.component.ts  | sed 's/__COMPONENT__/ShipmentReport/g' | sed 's/__SCENARIO__/SHIPMENT_REPORT/g' > /data/CODE/ELIPS/ncf/src/app/shipment/shipment-report-form/shipment-report-form.component.ts
+
+
